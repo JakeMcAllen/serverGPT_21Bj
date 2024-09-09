@@ -37,4 +37,4 @@ while True:
     print("What would you like to ask")
     query = input(">>> ")
     context = get_relevant_context_from_db(query)
-    print(context)
+    print(f"content: {context}")
