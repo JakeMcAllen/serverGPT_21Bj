@@ -5,7 +5,6 @@ import sys
 
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceHubEmbeddings
-from langchain.llms import HuggingFaceHub
 
 
 
@@ -58,6 +57,6 @@ if __name__ == "__main__":
 
     while True:
         query = input(">>> ")
-        prompt = generate_rag_prompt( get_relevant_context_from_db(query) )
+        prompt = generate_prompt( get_relevant_context_from_db(query) )
 
         print(f"content: {prompt}")
