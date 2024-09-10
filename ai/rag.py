@@ -24,7 +24,7 @@ os.environ['HF_TOKEN']  =  HUGGINFACE_TOKEN
 
 
 def signal_handler(sign, frame):
-    print('\nThank for using gemini. ')
+    print('\nBot stopped. ')
     sys.exit(0)
 
 signal.signal(signal.SIGINT, signal_handler)
