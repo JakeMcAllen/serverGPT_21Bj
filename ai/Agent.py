@@ -14,7 +14,7 @@ GEMINI_API_KEY = "AIzaSyCFhiseeAtrOTwRc3Ib0-h4vqFha7KLgPM"
 
 
 
-def Agent(query, keyWords):
+def Agent(query, keyWords, mode = 0):
         # WordNet
         keyWords = [wn.synsets(word)[0].name().split(".")[0] if wn.synsets(word) != [] else '' for word, qnt in keyWords.items()]
         keyWords.remove('')
@@ -28,8 +28,9 @@ def Agent(query, keyWords):
         print(f"\n\nQuestion: {question}\n\n")
 
         # Question to Model
-        response = get_gemini_response(question)
-        # response = get_model_response(question)
+        response = "No response"
+        if mode == 0: response = get_gemini_response(question)
+        else: response = get_model_response(question)
 
         # Register data to DB
         """TODO"""
