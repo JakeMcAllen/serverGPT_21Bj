@@ -41,7 +41,7 @@ def agent_routine(query, keyWords, mode=0):
 
 
 def get_model_response(msg: str):
-    pass
+    return "Empty"
 
 
 def get_gemini_response(prompt):
