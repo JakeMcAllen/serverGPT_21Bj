@@ -9,13 +9,7 @@ from rag import get_relevant_context_from_db, generate_prompt
 
 
 
-
-
 nltk.download('wordnet')
-
-
-# API_URL = "https://api-inference.huggingface.co/models/openai-community/gpt2"
-# API_key = "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"
 GEMINI_API_KEY = "AIzaSyCFhiseeAtrOTwRc3Ib0-h4vqFha7KLgPM"
 
 
@@ -55,29 +49,13 @@ def get_gemini_response(prompt):
     return answere.text
 
 
-query = "How work blockchain ?"
-kw = {"blockchain": 1, "work": 2}
-
-resp = Agent(query, kw)
-print(f"\nresp: {resp}\n")
 
 
-# print( get_gemini_response("Introduce yourself please.") )
 
-# def get_llama_HF_response(msg: str, min_length=256, max_length=500, print_response=False, eliminate_input=True) -> str:
-#     payload = { "inputs": msg, "top_k": max_length, "min_length": min_length, max_length:"max_length", "temperature": 0.8, "max_time": 40, "do_sample": True }
-#     headers = {"Authorization": f"Bearer {API_key}"} 
-#     errorCount = 0
-    
-#     while True:
-#         try:
-#             response = requests.post(API_URL, headers=headers, json=payload)
-            
-#             if response.status_code != 200: raise Exception(f"response:{response} and status: {response.json()}")
-#             if print_response: print(response.json(), end="\n\n")
-#             return response.json()[0]["generated_text"][len(msg) + 1:] if eliminate_input else response.json()[0]["generated_text"]
-            
-#         except Exception as e:
-#             print(f"Error: {e}" if errorCount == 0 else "." if errorCount%100000 == 0 else "", end="")
-#             errorCount += 1
-# get_gemini_RLHF_response(msg="Hello wold")
+
+if __name__ == "__main__":
+    query = "How work blockchain ?"
+    kw = {"blockchain": 1, "work": 2}
+
+    resp = Agent(query, kw)
+    print(f"\nresp: {resp}\n")
