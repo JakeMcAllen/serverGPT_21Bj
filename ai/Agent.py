@@ -5,7 +5,7 @@ import requests
 
 import google.generativeai as genai
 
-from rag import get_relevant_context_from_db, generate_prompt
+from .rag import get_relevant_context_from_db, generate_prompt
 
 
 
@@ -14,7 +14,8 @@ GEMINI_API_KEY = "AIzaSyCFhiseeAtrOTwRc3Ib0-h4vqFha7KLgPM"
 
 
 
-def Agent(query, keyWords, mode = 0):
+def agent_routine(query, keyWords, mode=0):
+        print(f"mode: {mode}")
         # WordNet
         keyWords = [wn.synsets(word)[0].name().split(".")[0] if wn.synsets(word) != [] else '' for word, qnt in keyWords.items()]
         keyWords.remove('')
