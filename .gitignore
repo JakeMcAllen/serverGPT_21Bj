@@ -1,3 +1,4 @@
 /env
 cmd
 ai/chroma_db_nccn/
+ai/__pycache__/rag.cpython-312.pyc
